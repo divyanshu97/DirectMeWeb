@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
-import Login from './Login.js';
 
 function handleSuccess(data) 
 {
