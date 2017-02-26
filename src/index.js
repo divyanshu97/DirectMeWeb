@@ -3,28 +3,36 @@ import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
 import Login from './Login.js';
 
-const responseGoogle = (response) => {
-
-}
-function handleSuccess(data) {
+function handleSuccess(data) 
+{
 	const accessToken = data.accessToken
 
-	fetch('http://direct-me.herokuapp.com/user/social/google-oauth2/', {
+	fetch('http://direct-me.herokuapp.com/user/social/google-oauth2/', 
+	{
 		method: 'POST',
 		body: JSON.stringify({'access_token': accessToken}),
-		headers: {
+		headers: 
+		{
    		 "Content-Type": "application/json"
   		}
-	}).then(function(response) {
-
-	}).then(function(json) {
-
-	}),function(err) {
+	})
+	.then(function(response) 
+	{
+  		return response.text()
+	})
+	.then(function(json) 
+	{
+		const user_token = json
+		
+	}),
+	function(err) 
+	{
 
 	}
 }
 
-function handleFaliure(data) {
+function handleFaliure(data) 
+{
 	console.log("Error :- "+data.error)
 }
 
