@@ -1,46 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import GoogleLogin from 'react-google-login';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Login from './Login'
+import SuperWorld from './SuperWorld'
+import { Router, Route, browserHistory } from 'react-router'
 
-function handleSuccess(data) 
-{
-	const accessToken = data.accessToken
 
-	fetch('http://direct-me.herokuapp.com/user/social/google-oauth2/', 
-	{
-		method: 'POST',
-		body: JSON.stringify({'access_token': accessToken}),
-		headers: 
-		{
-   		 "Content-Type": "application/json"
-  		}
-	})
-	.then(function(response) 
-	{
-  		return response.text()
-	})
-	.then(function(json) 
-	{
-		const user_token = json
-		
-	}),
-	function(err) 
-	{
-
-	}
-}
-
-function handleFaliure(data) 
-{
-	console.log("Error :- "+data.error)
-}
-
-ReactDOM.render(
-  <GoogleLogin
-    clientId="423627987537-16vs5nuat07fc62klaosgl7o0o1vmh7h.apps.googleusercontent.com"
-    buttonText="Google Login"
-    onSuccess={handleSuccess}
-    onFailure={handleFaliure}
-  />,
-  document.getElementById('root')
-);
+ReactDOM.render((
+    <Router history={browserHistory}>
+        <Route path="/" component={Login}/>
+        <Route path="SuperWorld" component={SuperWorld}/>
+    </Router>
+),document.getElementById('root'))
