@@ -21,19 +21,23 @@ let SuperWorld = React.createClass({
             Banana: 0,
             Timber: 0,
             Bamboo: 0,
-            Experience: 0
+            experience: 0,
+            first_name: '',
+            gravatar: ''
         }
 
     },
 
     setInventory(json) {
-        let inventoryCount = {}
-        for(let i in json.inventory) {
+        let inventory_count = {}
+        for (let i in json.inventory) {
             let item = json.inventory[i]
-            inventoryCount[item['item']] = item['count']
+            inventory_count[item['item']] = item['count']
         }
-        inventoryCount['Experience'] = json.experience
-        this.setState(inventoryCount)
+        inventory_count['experience'] = json.experience
+        inventory_count['first_name'] = json.first_name
+        inventory_count['gravatar'] = json.gravatar
+        this.setState(inventory_count)
     },
 
     componentDidMount(){
@@ -49,8 +53,9 @@ let SuperWorld = React.createClass({
             const data = response.json()
             return data
         }).then(function (json) {
+            const user_id = json['user_id']
+            localStorage.setItem('user_id', JSON.stringify(user_id))
             self.setInventory(json)
-
         }).catch(function (ex) {
             console.log('parsing failed', ex)
         })
@@ -58,6 +63,8 @@ let SuperWorld = React.createClass({
     render(){
         return (
             <div>
+                <a href="/profile/"><img src={this.state.gravatar}/></a>
+                <a href="/profile/">Howdy, {this.state.first_name}</a>
                 <Item src={Bamboo} name="Bamboo" count={this.state.Bamboo}/>
                 <Item src={Coconut} name="Coconut" count={this.state.Coconut}/>
                 <Item src={Timber} name="Timber" count={this.state.Timber}/>

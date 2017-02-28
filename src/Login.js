@@ -1,6 +1,6 @@
 import * as React from 'react'
 import GoogleLogin from 'react-google-login'
-import { Router, Route, browserHistory } from 'react-router'
+import {browserHistory} from 'react-router'
 
 
 let Login = React.createClass({
@@ -22,12 +22,9 @@ let Login = React.createClass({
             .then(function (json) {
                 const user_token = json['token']
                 localStorage.setItem('token', JSON.stringify(user_token))
-                browserHistory.push('/superworld')
+                browserHistory.push('/superworld/')
 
-            }),
-            function (err) {
-
-            }
+            })
     },
 
     handleFaliure(data) {

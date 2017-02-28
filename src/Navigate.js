@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const styles = {
     width: '250px',
     height: '150px'
@@ -8,10 +7,9 @@ const styles = {
 
 let Navigate = React.createClass({
     render(){
-        const url = this.props.src
         return (
             <div >
-                <a href={this.props.redirectUrl}><img style={styles} src={this.props.src}/></a>
+                <a href={this.props.redirectUrl}><img style={styles} src={this.props.src} alt="Loading Buttons"/></a>
             </div>
         )
     }
