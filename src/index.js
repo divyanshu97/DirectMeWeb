@@ -30,6 +30,5 @@ ReactDOM.render((
         <Route path="superworld/" component={SuperWorld} onEnter={requireAuth}/>
         <Route path="profile/" component={Profile} onEnter={requireAuth}/>
         <Route path="parked-on-mine/" component={ParkedOnMine} onEnter={requireAuth}/>
-
     </Router>
-), document.getElementById('root'))
+),document.getElementById('root'))

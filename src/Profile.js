@@ -1,5 +1,6 @@
 import React from 'react'
 
+const base_url="http://direct-me.herokuapp.com/"
 let Profile = React.createClass({
 
     getInitialState(){
@@ -17,7 +18,7 @@ let Profile = React.createClass({
     },
     componentDidMount(){
         let self = this
-        fetch('http://direct-me.herokuapp.com/user/', {
+        fetch(base_url+ 'user/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ let Profile = React.createClass({
 
     handleSubmit(event){
         event.preventDefault()
-        fetch('http://direct-me.herokuapp.com/user/', {
+        fetch(base_url+'user/', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
