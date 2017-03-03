@@ -1,41 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import GoogleLogin from 'react-google-login';
-//import {Router, Route, browserHistory} from 'react-router';
-import Login from './Login.js';
-const responseGoogle = (response) => {
-  console.log(response)
-}
-function handleSuccess(data) {
-	const accessToken = data.accessToken
-	console.log("Sending data")
-	console.log(data.accessToken)
-	fetch('http://direct-me.herokuapp.com/user/social/google-oauth2/', {
-		method: 'POST',
-		body: JSON.stringify({'access_token': accessToken}),
-		headers: {
-   		 "Content-Type": "application/json"
-  		}
-	}).then(function(response) {
-		console.log(response.json())
-	}).then(function(json) {
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Login from './Login'
+import SuperWorld from './SuperWorld'
+import Profile from './Profile'
+import ParkedOnMine from './ParkedOnMine'
+import {Router, Route, browserHistory} from 'react-router'
 
-	}),function(err) {
-		console.log("Some error occured")
-		console.log("Error : "+err.Message)
-	}
+
+function loggedIn() {
+    const token = JSON.parse(localStorage.getItem('token'))
+    console.log(token)
+    if (token)
+        return true
+    else
+        return false
 }
 
-function handleFaliure(data) {
-	console.log("Error :- "+data.error)
+function requireAuth(nextState, replace) {
+    if (!loggedIn()) {
+        replace({
+            pathname: '/'
+        })
+    }
 }
 
-ReactDOM.render(
-  <GoogleLogin
-    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-    buttonText="Google Login"
-    onSuccess={handleSuccess}
-    onFailure={handleFaliure}
-  />,
-  document.getElementById('root')
-);
+ReactDOM.render((
+    <Router history={browserHistory}>
+        <Route path="/" component={Login}/>
+        <Route path="superworld/" component={SuperWorld} onEnter={requireAuth}/>
+        <Route path="profile/" component={Profile} onEnter={requireAuth}/>
+        <Route path="parked-on-mine/" component={ParkedOnMine} onEnter={requireAuth}/>
+    </Router>
+),document.getElementById('root'))
