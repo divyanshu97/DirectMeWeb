@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import FineButton from './FineUser'
 
-const base_url="http://direct-me.herokuapp.com/"
+const base_url = "http://direct-me.herokuapp.com/"
 let ParkedOnMine = React.createClass({
 
     getInitialState(){
@@ -12,7 +12,7 @@ let ParkedOnMine = React.createClass({
     },
     componentDidMount(){
         let self = this
-        fetch(base_url+'core/ports/' + JSON.parse(localStorage.getItem('user_id')) + '/', {
+        fetch(base_url + 'core/ports/' + JSON.parse(localStorage.getItem('user_id')) + '/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ let ParkedOnMine = React.createClass({
         return (
             <div>
                 {
-                    this.state.port_list.map((port,i) => {
+                    this.state.port_list.map((port, i) => {
                         return (
                             <div>
                                 <p> {port.port_type} </p>
@@ -61,7 +61,8 @@ let ParkedOnMine = React.createClass({
                                 <p> {port.user_name} </p>
                                 <p> {port.user_id} </p>
                                 <img style={{height: 200, width: 200}} src={port.ship_image}/>
-                                <FineButton port_id={port.port_id} show={port.port_type == "Parking" || (port.is_vacant && port.port_type=="Non Parking")}/>
+                                <FineButton port_id={port.port_id}
+                                            show={port.port_type == "Parking" || (port.is_vacant && port.port_type == "Non Parking")}/>
                                 <hr/>
                             </div>
                         )

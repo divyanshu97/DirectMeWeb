@@ -1,18 +1,17 @@
-import React from 'react'
-import Navigate from './Navigate'
-import GarageImg from './images/garage.png'
-import ParkNowImg from './images/park_now_plank.png'
-import ShowroomImg from './images/showroom.png'
-import ParkMineImg from './images/parked_mine_plank.png'
-import Bamboo from './images/bamboo.png'
-import Banana from './images/banana.png'
-import Coconut from './images/coconut.png'
-import Gold from './images/coin.png'
-import Timber from './images/wood.png'
-import Item from './Item'
-import ParkNow from './ParkNow.js'
+import React from "react";
+import Navigate from "./Navigate";
+import GarageImg from "./images/garage.png";
+import ParkNowImg from "./images/park_now_plank.png";
+import ShowroomImg from "./images/showroom.png";
+import ParkMineImg from "./images/parked_mine_plank.png";
+import Bamboo from "./images/bamboo.png";
+import Banana from "./images/banana.png";
+import Coconut from "./images/coconut.png";
+import Gold from "./images/coin.png";
+import Timber from "./images/wood.png";
+import Item from "./Item";
 
-const base_url="http://direct-me.herokuapp.com/"
+const base_url = "http://direct-me.herokuapp.com/"
 let SuperWorld = React.createClass({
 
 
@@ -44,7 +43,7 @@ let SuperWorld = React.createClass({
 
     componentDidMount(){
         let self = this
-        fetch(base_url+'user/', {
+        fetch(base_url + 'user/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

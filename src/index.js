@@ -7,7 +7,7 @@ import ParkedOnMine from './ParkedOnMine'
 import ParkNow from './ParkNow'
 import IslandWorld from './IslandWorld.js'
 import Island_Resdentials_List from './Island_Resdentials_List.js'
-import ParkingDetails from './Parking_Details'
+import ParkingDetails from './ParkingDetails'
 import ShowRoom from './ShowRoom.js'
 import ParkedMine from './ParkedMine.js'
 import {Router, Route, browserHistory} from 'react-router'
@@ -42,4 +42,4 @@ ReactDOM.render((
         <Route path="showroom/" component={ShowRoom} onEnter={requireAuth}/>
         <Route path="parked-mine/" component={ParkedMine} onEnter={requireAuth}/>
     </Router>
-),document.getElementById('root'))
+), document.getElementById('root'))

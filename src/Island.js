@@ -10,7 +10,7 @@ let Island = React.createClass({
         return (
             <div >
                 <p>{this.props.id}</p>
-                <img id={this.props.id} src={this.props.src} alt={this.props.name} onClick={this.handleClick} />
+                <img id={this.props.id} src={this.props.src} alt={this.props.name} onClick={this.handleClick}/>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const base_url="http://direct-me.herokuapp.com/"
+const base_url = "http://direct-me.herokuapp.com/"
 let FineButton = React.createClass({
 
     fineUser(e){

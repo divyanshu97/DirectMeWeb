@@ -2,7 +2,7 @@ import React from 'react'
 import Island from './Island.js'
 
 const base_url = "http://direct-me.herokuapp.com/"
-var IslandWorld = React.createClass({
+let IslandWorld = React.createClass({
 
     getInitialState: function () {
         return {

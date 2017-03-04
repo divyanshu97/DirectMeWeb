@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const base_url = "http://direct-me.herokuapp.com/"
 let ParkingDetails = React.createClass({
