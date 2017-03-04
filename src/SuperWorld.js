@@ -10,6 +10,7 @@ import Coconut from './images/coconut.png'
 import Gold from './images/coin.png'
 import Timber from './images/wood.png'
 import Item from './Item'
+import ParkNow from './ParkNow.js'
 
 const base_url="http://direct-me.herokuapp.com/"
 let SuperWorld = React.createClass({
@@ -73,9 +74,9 @@ let SuperWorld = React.createClass({
                 <Item src={Banana} name="Banana" count={this.state.Banana}/>
                 <Item src={Gold} name="Gold Coin" count={this.state.Gold}/>
                 <Navigate src={GarageImg} redirectUrl="" message="Garage"/>
-                <Navigate src={ShowroomImg} redirectUrl="" message="Showroom"/>
+                <Navigate src={ShowroomImg} redirectUrl="/showroom/" message="Showroom"/>
                 <Navigate src={ParkMineImg} redirectUrl="" message="ParkMine"/>
-                <Navigate src={ParkNowImg} redirectUrl="" message="Park Now"/>
+                <Navigate src={ParkNowImg} redirectUrl="/parked-now/" message="Park Now"/>
                 <Navigate src="" redirectUrl="/parked-on-mine/" message="Parked On Mine"/>
             </div>
         )
