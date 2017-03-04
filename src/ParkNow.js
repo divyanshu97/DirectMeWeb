@@ -1,9 +1,9 @@
-import React from "react";
-import "./ParkNow.css";
-import DockButton from "./DockShip.js";
-import {browserHistory} from "react-router";
+import React from 'react'
+import './ParkNow.css'
+import DockButton from './DockShip.js'
+import {browserHistory} from 'react-router'
 
-const base_url = "http://direct-me.herokuapp.com/"
+const base_url = 'http://direct-me.herokuapp.com/'
 let ParkNow = React.createClass({
 
     getInitialState: function () {

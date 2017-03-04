@@ -1,8 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import FineButton from './FineUser'
 
-const base_url = "http://direct-me.herokuapp.com/"
+const base_url = 'http://direct-me.herokuapp.com/'
 let ParkedOnMine = React.createClass({
 
     getInitialState(){

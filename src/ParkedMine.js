@@ -1,10 +1,9 @@
-import React from 'react';
-import './ParkNow.css';
-import Navigate from './Navigate.js';
+import React from 'react'
+import './ParkNow.css'
 import {browserHistory} from 'react-router'
 
 
-const base_url = "http://direct-me.herokuapp.com/"
+const base_url = 'http://direct-me.herokuapp.com/'
 
 var ParkedMine = React.createClass({
 
