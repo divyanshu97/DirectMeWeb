@@ -1,17 +1,15 @@
 import React from 'react'
-import FineButton from './FineUser'
 
 const base_url = 'http://direct-me.herokuapp.com/'
-let ParkedOnMine = React.createClass({
-
-    getInitialState(){
+let ParkingDetails = React.createClass({
+    getInitialState: function () {
         return {
             port_list: []
         }
     },
-    componentDidMount(){
+    componentWillMount: function () {
         let self = this
-        fetch(base_url + 'core/ports/' + JSON.parse(localStorage.getItem('user_id')) + '/', {
+        fetch(base_url + 'core/ports/' + JSON.parse(sessionStorage.getItem('resedential_id')) + '/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,14 +28,13 @@ let ParkedOnMine = React.createClass({
                         user_name: port.logs[0].username,
                         user_id: port.logs[0].user_id,
                         ship_image: port.logs[0].ship_image,
-                        is_vacant: 0
+                        ship_id: port.logs[0].ship
                     })
                 }
                 else {
                     data.push({
                         port_type: port.type,
                         port_id: port.id,
-                        is_vacant: 1
                     })
                 }
             }
@@ -48,7 +45,8 @@ let ParkedOnMine = React.createClass({
             console.log('parsing failed', ex)
         })
     },
-    render() {
+
+    render: function () {
         return (
             <div>
                 {
@@ -56,12 +54,9 @@ let ParkedOnMine = React.createClass({
                         return (
                             <div>
                                 <p> {port.port_type} </p>
-                                <p> {port.port_id} </p>
                                 <p> {port.user_name} </p>
                                 <p> {port.user_id} </p>
                                 <img style={{height: 200, width: 200}} src={port.ship_image}/>
-                                <FineButton port_id={port.port_id}
-                                            show={port.port_type == "Parking" || (port.is_vacant && port.port_type == "Non Parking")}/>
                                 <hr/>
                             </div>
                         )
@@ -71,4 +66,5 @@ let ParkedOnMine = React.createClass({
         )
     }
 })
-export default ParkedOnMine
+
+export default ParkingDetails;

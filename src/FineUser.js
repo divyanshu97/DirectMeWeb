@@ -1,10 +1,11 @@
 import React from 'react'
 
-const base_url="http://direct-me.herokuapp.com/"
+const base_url = 'http://direct-me.herokuapp.com/'
 let FineButton = React.createClass({
 
     fineUser(e){
         let port_id = e.target.id
+        alert(e.target.id)
         fetch(base_url + 'core/fine/', {
             method: 'POST',
             headers: {

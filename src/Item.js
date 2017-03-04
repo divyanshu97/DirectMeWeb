@@ -6,7 +6,6 @@ const styles = {
 }
 
 
-
 const Item = React.createClass({
     render() {
         return (

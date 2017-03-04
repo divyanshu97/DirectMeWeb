@@ -11,7 +11,7 @@ import Gold from './images/coin.png'
 import Timber from './images/wood.png'
 import Item from './Item'
 
-const base_url="http://direct-me.herokuapp.com/"
+const base_url = 'http://direct-me.herokuapp.com/'
 let SuperWorld = React.createClass({
 
 
@@ -42,9 +42,8 @@ let SuperWorld = React.createClass({
     },
 
     componentDidMount(){
-
         let self = this
-        fetch(base_url+'user/', {
+        fetch(base_url + 'user/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -73,9 +72,9 @@ let SuperWorld = React.createClass({
                 <Item src={Banana} name="Banana" count={this.state.Banana}/>
                 <Item src={Gold} name="Gold Coin" count={this.state.Gold}/>
                 <Navigate src={GarageImg} redirectUrl="" message="Garage"/>
-                <Navigate src={ShowroomImg} redirectUrl="" message="Showroom"/>
-                <Navigate src={ParkMineImg} redirectUrl="" message="ParkMine"/>
-                <Navigate src={ParkNowImg} redirectUrl="" message="Park Now"/>
+                <Navigate src={ShowroomImg} redirectUrl="/showroom/" message="Showroom"/>
+                <Navigate src={ParkMineImg} redirectUrl="/parked-mine/" message="ParkMine"/>
+                <Navigate src={ParkNowImg} redirectUrl="/parked-now/" message="Park Now"/>
                 <Navigate src="" redirectUrl="/parked-on-mine/" message="Parked On Mine"/>
             </div>
         )
