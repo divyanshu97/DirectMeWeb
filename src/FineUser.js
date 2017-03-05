@@ -5,6 +5,7 @@ let FineButton = React.createClass({
 
     fineUser(e){
         let port_id = e.target.id
+        alert(e.target.id)
         fetch(base_url + 'core/fine/', {
             method: 'POST',
             headers: {

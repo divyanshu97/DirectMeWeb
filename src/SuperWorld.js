@@ -43,7 +43,6 @@ let SuperWorld = React.createClass({
     },
 
     componentDidMount(){
-
         let self = this
         fetch(base_url+'user/', {
             method: 'GET',
@@ -75,7 +74,7 @@ let SuperWorld = React.createClass({
                 <Item src={Gold} name="Gold Coin" count={this.state.Gold}/>
                 <Navigate src={GarageImg} redirectUrl="" message="Garage"/>
                 <Navigate src={ShowroomImg} redirectUrl="/showroom/" message="Showroom"/>
-                <Navigate src={ParkMineImg} redirectUrl="" message="ParkMine"/>
+                <Navigate src={ParkMineImg} redirectUrl="/parked-mine/" message="ParkMine"/>
                 <Navigate src={ParkNowImg} redirectUrl="/parked-now/" message="Park Now"/>
                 <Navigate src="" redirectUrl="/parked-on-mine/" message="Parked On Mine"/>
             </div>

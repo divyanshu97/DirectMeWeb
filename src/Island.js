@@ -1,18 +1,19 @@
 import React from 'react'
-
-const styles = {
-    width: '250px',
-    height: '150px'
-}
+import {browserHistory} from 'react-router'
 
 let Island = React.createClass({
+    handleClick(e) {
+        sessionStorage.setItem('island_id', JSON.stringify(e.target.id))
+        browserHistory.push('/island-residents/')
+    },
     render(){
         return (
             <div >
-                <img src={this.props.src} alt={this.props.name} style={styles}/>
+                <p>{this.props.id}</p>
+                <img id={this.props.id} src={this.props.src} alt={this.props.name} onClick={this.handleClick} />
             </div>
         )
     }
 })
 
-export default Navigate
+export default Island

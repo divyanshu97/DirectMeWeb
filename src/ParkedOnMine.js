@@ -30,7 +30,7 @@ let ParkedOnMine = React.createClass({
                         port_id: port.id,
                         user_name: port.logs[0].username,
                         user_id: port.logs[0].user_id,
-                        ship_image: base_url + port.logs[0].ship_image,
+                        ship_image: port.logs[0].ship_image,
                         is_vacant: 0
                     })
                 }

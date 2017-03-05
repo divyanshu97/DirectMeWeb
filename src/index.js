@@ -9,6 +9,7 @@ import IslandWorld from './IslandWorld.js'
 import Island_Resdentials_List from './Island_Resdentials_List.js'
 import ParkingDetails from './Parking_Details'
 import ShowRoom from './ShowRoom.js'
+import ParkedMine from './ParkedMine.js'
 import {Router, Route, browserHistory} from 'react-router'
 
 
@@ -36,8 +37,9 @@ ReactDOM.render((
         <Route path="parked-on-mine/" component={ParkedOnMine} onEnter={requireAuth}/>
         <Route path="parked-now/" component={ParkNow} onEnter={requireAuth}/>
         <Route path="island-world/" component={IslandWorld} onEnter={requireAuth}/>
-        <Route path="island-residentials/" component={Island_Resdentials_List} onEnter={requireAuth}/>
+        <Route path="island-residents/" component={Island_Resdentials_List} onEnter={requireAuth}/>
         <Route path="parking-details/" component={ParkingDetails} onEnter={requireAuth}/>
         <Route path="showroom/" component={ShowRoom} onEnter={requireAuth}/>
+        <Route path="parked-mine/" component={ParkedMine} onEnter={requireAuth}/>
     </Router>
 ),document.getElementById('root'))

@@ -23,7 +23,6 @@ let Login = React.createClass({
                 const user_token = json['token']
                 localStorage.setItem('token', JSON.stringify(user_token))
                 browserHistory.push('/superworld/')
-
             })
     },
 
