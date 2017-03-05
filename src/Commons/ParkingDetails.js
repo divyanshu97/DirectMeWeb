@@ -1,4 +1,5 @@
 import React from 'react'
+import FinalDockButton from '../DockNow/FinalDockButton'
 
 const base_url = 'http://direct-me.herokuapp.com/'
 const ParkingDetails = React.createClass({
@@ -35,6 +36,7 @@ const ParkingDetails = React.createClass({
                     data.push({
                         port_type: port.type,
                         port_id: port.id,
+                        ship_id: 0
                     })
                 }
             }
@@ -53,10 +55,11 @@ const ParkingDetails = React.createClass({
                     this.state.port_list.map((port, i) => {
                         return (
                             <div>
-                                <p> {port.port_type} </p>
+                                <p> Type: {port.port_type} </p>
                                 <p> {port.user_name} </p>
                                 <p> {port.user_id} </p>
                                 <img style={{height: 200, width: 200}} src={port.ship_image}/>
+                                <FinalDockButton port_id={port.port_id} show={port.ship_id != 0 }/>
                                 <hr/>
                             </div>
                         )

@@ -36,7 +36,7 @@ const DockNow = React.createClass({
                 boats_image.push(boats[i].ship_image)
                 this.setState({boats_image: boats_image})
             }
-            sessionStorage.setItem('ship_to_park', JSON.stringify(this.state.boats[this.state.boat_index].id))
+            sessionStorage.setItem('ship_to_park', JSON.stringify(this.state.current_boat_id))
         })
     },
     handleLeftClick: function (event) {
@@ -49,7 +49,7 @@ const DockNow = React.createClass({
             current_boat_id: this.state.boats[next].id,
             current_boat_status: this.state.boats[next].status
         })
-        sessionStorage.setItem('ship_to_park', JSON.stringify(this.state.boats[this.state.boat_index].id))
+        sessionStorage.setItem('ship_to_park', JSON.stringify(this.state.current_boat_id))
     },
     handleRightClick: function (event) {
         let next = this.state.boat_index
@@ -61,7 +61,7 @@ const DockNow = React.createClass({
             current_boat_id: this.state.boats[next].id,
             current_boat_status: this.state.boats[next].status
         })
-        sessionStorage.setItem('ship_to_park', JSON.stringify(this.state.boats[this.state.boat_index].id))
+        sessionStorage.setItem('ship_to_park', JSON.stringify(this.state.current_boat_id))
     },
     render: function () {
         return (

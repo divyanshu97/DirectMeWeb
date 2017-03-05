@@ -62,7 +62,6 @@ let ItemBar = React.createClass({
     },
     render(){
         return (
-
             <div className="itembar">
 
 
@@ -77,6 +76,7 @@ let ItemBar = React.createClass({
                 <div className="setting">
                     <img src={Setting} className="settingimg"/>
                 </div>
+
             </div>
         )
     }
