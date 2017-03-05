@@ -1,4 +1,5 @@
 import * as React from 'react'
+import CSS from './CSS/superworld.css'
 
 const styles = {
     width: '50px',
@@ -9,10 +10,10 @@ const styles = {
 const Item = React.createClass({
     render() {
         return (
-            <span>
-                <img src={this.props.src} alt={this.props.name} style={styles}/>
+            <div className={this.props.name}>
+                <img src={this.props.src} className={this.props.css_class_name} />
                 <span>{this.props.count}</span>
-            </span>
+            </div>
         )
     }
 })

@@ -1,85 +1,119 @@
 import React from 'react'
-import Navigate from './Navigate'
-import GarageImg from '../images/garage.png'
-import ParkNowImg from '../images/park_now_plank.png'
-import ShowroomImg from '../images/showroom.png'
-import ParkMineImg from '../images/parked_mine_plank.png'
-import Bamboo from '../images/bamboo.png'
-import Banana from '../images/banana.png'
-import Coconut from '../images/coconut.png'
-import Gold from '../images/coin.png'
-import Timber from '../images/wood.png'
-import Item from '../Commons/Item'
+import Showroom from './Images/showroom.png'
+import Plank from './Images/plank.png'
+import Docknow from './Images/docknow.png'
+import MyDocking from './Images/mydocking.png'
+import Cloud1 from './Images/cloud1.png'
+import Cloud2 from './Images/cloud2.png'
+import Cloud3 from './Images/cloud3.png'
+import Cloud4 from './Images/cloud4.png'
+import Wave1 from './Images/wave1.png'
+import Wave2 from './Images/wave2.png'
+import Wave3 from './Images/wave3.png'
+import Wave4 from './Images/wave4.png'
+import BigSign from './Images/bigsign.png'
+import CSS from './CSS/superworld.css'
 
-const base_url = 'http://direct-me.herokuapp.com/'
+import ItemBar from './ItemBar'
+
+
 let SuperWorld = React.createClass({
-
-
-    getInitialState(){
-        return {
-            Gold: 0,
-            Coconut: 0,
-            Banana: 0,
-            Timber: 0,
-            Bamboo: 0,
-            experience: 0,
-            first_name: '',
-            gravatar: ''
-        }
-
-    },
-
-    setInventory(json) {
-        let inventory_count = {}
-        for (let i in json.inventory) {
-            let item = json.inventory[i]
-            inventory_count[item['item']] = item['count']
-        }
-        inventory_count['experience'] = json.experience
-        inventory_count['first_name'] = json.first_name
-        inventory_count['gravatar'] = json.gravatar
-        this.setState(inventory_count)
-    },
-
-    componentDidMount(){
-        let self = this
-        fetch(base_url + 'user/', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Token ' + JSON.parse(localStorage.getItem('token'))
-            }
-        }).then(function (response) {
-            const data = response.json()
-            return data
-        }).then(function (json) {
-            const user_id = json['user_id']
-            localStorage.setItem('user_id', JSON.stringify(user_id))
-            self.setInventory(json)
-
-        }).catch(function (ex) {
-            console.log('parsing failed', ex)
-        })
-    },
-    render(){
+    render() {
         return (
-            <div>
-                <a href="/profile/"><img src={this.state.gravatar}/></a>
-                <a href="/profile/">Howdy, {this.state.first_name}</a>
-                <Item src={Bamboo} name="Bamboo" count={this.state.Bamboo}/>
-                <Item src={Coconut} name="Coconut" count={this.state.Coconut}/>
-                <Item src={Timber} name="Timber" count={this.state.Timber}/>
-                <Item src={Banana} name="Banana" count={this.state.Banana}/>
-                <Item src={Gold} name="Gold Coin" count={this.state.Gold}/>
-                <Navigate src={GarageImg} redirectUrl="" message="Garage"/>
-                <Navigate src={ShowroomImg} redirectUrl="/showroom/" message="Showroom"/>
-                <Navigate src={ParkMineImg} redirectUrl="/parked-mine/" message="ParkMine"/>
-                <Navigate src={ParkNowImg} redirectUrl="/parked-now/" message="Park Now"/>
-                <Navigate src="" redirectUrl="/parked-on-mine/" message="Parked On Mine"/>
+            <div className="maincontainer">
+
+                {/*<!-- ====================== ITEM BAR STARTS HERE =============================================== -->*/}
+
+                <ItemBar/>
+                {/*<!-- ============================ ITEM BAR ENDS HERE ===================================== -->*/}
+
+                {/*<!-- ==================================== SUPER WORLD ELEMENTS ========================= -->*/}
+                <div className="showroom">
+                    <img className="showroomimg" src={Showroom} />
+                </div>
+
+                <div className="plank">
+                    <img className="plankimg" src={Plank}/>
+                </div>
+
+                <div className="parknow">
+                    <a href="#"><img src={Docknow} className="parknowimg"/></a>
+                </div>
+
+                <div className="parkedmine">
+                    <a href="#"><img src={MyDocking} className="parkedmineimg"/></a>
+                </div>
+
+
+                {/*<!-- ============================== SUPER WORLD ELEMENTS ENDS HERE ================================== -->*/}
+                {/*<!-- ============================== CLOUDS STARTS HERE ================================== -->*/}
+                <img src={Cloud1} className="cloud1img"/>
+                <img src={Cloud2} className="cloud2img"/>
+                <img src={Cloud3} className="cloud3img"/>
+                <img src={Cloud4} className="cloud4img"/>
+
+                {/*<!-- ============================== CLOUDS ENDS HERE ================================== -->*/}
+
+                {/*<!-- ================================ WATER/SEA SPRITE ================================== -->*/}
+
+
+                <ul id="waterwaves" style={{'list-style': 'none'}}>
+                    <li className="layer" data-depth="0.0625">
+                        <div className="seawave1"><img src={Wave1} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.125">
+                        <div className="seawave2"><img src={Wave2} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.1875">
+                        <div className="seawave3"><img src={Wave3} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.25">
+                        <div className="seawave4"><img src={Wave4} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.3125">
+                        <div className="seawave5"><img src={Wave1} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.375">
+                        <div className="seawave6"><img src={Wave2} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.4375">
+                        <div className="seawave7"><img src={Wave3} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.5">
+                        <div className="seawave8"><img src={Wave4} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.5625">
+                        <div className="seawave9"><img src={Wave1} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.625">
+                        <div className="seawave10"><img src={Wave2} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.6875">
+                        <div className="seawave11"><img src={Wave3} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.75">
+                        <div className="seawave12"><img src={Wave4} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.8125">
+                        <div className="seawave13"><img src={Wave1} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.875">
+                        <div className="seawave14"><img src={Wave2} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="0.9375">
+                        <div className="seawave15"><img src={Wave3} className="seawaveimg"/></div>
+                    </li>
+                    <li className="layer" data-depth="1">
+                        <div className="seawave16"><img src={Wave4} className="seawaveimg"/></div>
+                    </li>
+                </ul>
+
+                <div className="clothsign">
+                    <img src={BigSign} className="clothsignimg"/>
+                </div>
             </div>
         )
     }
-})
-
+    })
 
 export default SuperWorld
