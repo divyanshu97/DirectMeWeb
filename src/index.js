@@ -10,6 +10,7 @@ import IslandWorld from './Commons/IslandWorld.js'
 import Residents from './DockNow/Residents.js'
 import ParkingDetails from './Commons/ParkingDetails'
 import ShowRoom from './Showroom/Showroom.js'
+import Garage from './Garage/Garage.js'
 import Dockings from './Dockings/Dockings.js'
 import {Router, Route, browserHistory} from 'react-router'
 
@@ -41,6 +42,7 @@ ReactDOM.render((
         <Route path="island-residents/" component={Residents} onEnter={requireAuth}/>
         <Route path="parking-details/" component={ParkingDetails} onEnter={requireAuth}/>
         <Route path="showroom/" component={ShowRoom} onEnter={requireAuth}/>
+        <Route path="garage/" component={Garage} onEnter={requireAuth} />
         <Route path="dockings/" component={Dockings} onEnter={requireAuth}/>
     </Router>
 ), document.getElementById('root'))
