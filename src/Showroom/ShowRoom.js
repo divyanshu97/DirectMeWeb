@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigate from './Navigate.js'
+import Navigate from '../SuperWorld/Navigate.js'
 import {browserHistory} from 'react-router'
 
 const base_url = 'http://direct-me.herokuapp.com/'

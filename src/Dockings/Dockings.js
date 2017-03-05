@@ -1,5 +1,5 @@
 import React from 'react'
-import './ParkNow.css'
+import '../DockNow/CSS/DockNow.css'
 import {browserHistory} from 'react-router'
 
 

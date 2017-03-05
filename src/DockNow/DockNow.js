@@ -1,5 +1,5 @@
 import React from 'react'
-import './ParkNow.css'
+import './CSS/DockNow.css'
 import DockButton from './DockShip.js'
 import {browserHistory} from 'react-router'
 
