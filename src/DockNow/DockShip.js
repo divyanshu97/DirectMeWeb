@@ -2,7 +2,7 @@ import React from 'react'
 import {browserHistory} from 'react-router'
 
 const base_url = 'http://direct-me.herokuapp.com/'
-let DockButton = React.createClass({
+const DockButton = React.createClass({
 
     dock_ship(e){
         browserHistory.push('/island-world/')

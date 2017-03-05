@@ -1,7 +1,7 @@
 import React from 'react'
 
 const base_url = 'http://direct-me.herokuapp.com/'
-let ParkingDetails = React.createClass({
+const ParkingDetails = React.createClass({
     getInitialState: function () {
         return {
             port_list: []

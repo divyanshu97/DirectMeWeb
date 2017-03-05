@@ -3,7 +3,7 @@ import GoogleLogin from 'react-google-login'
 import {browserHistory} from 'react-router'
 
 
-let Login = React.createClass({
+const Login = React.createClass({
 
     handleSuccess(data){
         const accessToken = data.accessToken

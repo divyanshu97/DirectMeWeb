@@ -5,7 +5,7 @@ import {browserHistory} from 'react-router'
 
 const base_url = 'http://direct-me.herokuapp.com/'
 
-var ParkedMine = React.createClass({
+const Dockings = React.createClass({
 
     getInitialState: function () {
         return {}
@@ -48,4 +48,4 @@ var ParkedMine = React.createClass({
     }
 })
 
-export default ParkedMine;
+export default Dockings;

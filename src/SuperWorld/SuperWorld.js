@@ -1,4 +1,5 @@
 import React from 'react'
+import ItemBar from './ItemBar'
 import Showroom from './Images/showroom.png'
 import Plank from './Images/plank.png'
 import Docknow from './Images/docknow.png'
@@ -14,22 +15,17 @@ import Wave4 from './Images/wave4.png'
 import BigSign from './Images/bigsign.png'
 import CSS from './CSS/superworld.css'
 
-import ItemBar from './ItemBar'
-
 
 let SuperWorld = React.createClass({
     render() {
         return (
             <div className="maincontainer">
 
-                {/*<!-- ====================== ITEM BAR STARTS HERE =============================================== -->*/}
-
                 <ItemBar/>
-                {/*<!-- ============================ ITEM BAR ENDS HERE ===================================== -->*/}
 
-                {/*<!-- ==================================== SUPER WORLD ELEMENTS ========================= -->*/}
+                {/* SUPER WORLD ELEMENTS */}
                 <div className="showroom">
-                    <img className="showroomimg" src={Showroom} />
+                    <img className="showroomimg" src={Showroom}/>
                 </div>
 
                 <div className="plank">
@@ -43,20 +39,16 @@ let SuperWorld = React.createClass({
                 <div className="parkedmine">
                     <a href="#"><img src={MyDocking} className="parkedmineimg"/></a>
                 </div>
+                {/* SUPER WORLD ELEMENTS ENDS HERE */}
 
-
-                {/*<!-- ============================== SUPER WORLD ELEMENTS ENDS HERE ================================== -->*/}
-                {/*<!-- ============================== CLOUDS STARTS HERE ================================== -->*/}
+                {/* CLOUDS STARTS HERE */}
                 <img src={Cloud1} className="cloud1img"/>
                 <img src={Cloud2} className="cloud2img"/>
                 <img src={Cloud3} className="cloud3img"/>
                 <img src={Cloud4} className="cloud4img"/>
+                {/* CLOUDS ENDS HERE */}
 
-                {/*<!-- ============================== CLOUDS ENDS HERE ================================== -->*/}
-
-                {/*<!-- ================================ WATER/SEA SPRITE ================================== -->*/}
-
-
+                {/* WATER/SEA SPRITE */}
                 <ul id="waterwaves" style={{'list-style': 'none'}}>
                     <li className="layer" data-depth="0.0625">
                         <div className="seawave1"><img src={Wave1} className="seawaveimg"/></div>
@@ -107,6 +99,7 @@ let SuperWorld = React.createClass({
                         <div className="seawave16"><img src={Wave4} className="seawaveimg"/></div>
                     </li>
                 </ul>
+                {/* WATER/SEA SPRITE ENDS HERE */}
 
                 <div className="clothsign">
                     <img src={BigSign} className="clothsignimg"/>
@@ -114,6 +107,6 @@ let SuperWorld = React.createClass({
             </div>
         )
     }
-    })
+})
 
 export default SuperWorld

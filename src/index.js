@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom'
 import Login from './Login/Login'
 import SuperWorld from './SuperWorld/SuperWorld'
 import Profile from './Profile/Profile'
-import ParkedOnMine from './Harbour/Harbour'
-import ParkNow from './DockNow/DockNow'
+import Harbour from './Harbour/Harbour'
+import DockNow from './DockNow/DockNow'
 import IslandWorld from './Commons/IslandWorld.js'
-import Island_Resdentials_List from './DockNow/Residents.js'
+import Residents from './DockNow/Residents.js'
 import ParkingDetails from './Commons/ParkingDetails'
 import ShowRoom from './Showroom/ShowRoom.js'
-import ParkedMine from './Dockings/Dockings.js'
+import Dockings from './Dockings/Dockings.js'
 import {Router, Route, browserHistory} from 'react-router'
 
 
@@ -34,12 +34,12 @@ ReactDOM.render((
         <Route path="/" component={Login}/>
         <Route path="superworld/" component={SuperWorld} onEnter={requireAuth}/>
         <Route path="profile/" component={Profile} onEnter={requireAuth}/>
-        <Route path="parked-on-mine/" component={ParkedOnMine} onEnter={requireAuth}/>
-        <Route path="parked-now/" component={ParkNow} onEnter={requireAuth}/>
+        <Route path="parked-on-mine/" component={Harbour} onEnter={requireAuth}/>
+        <Route path="parked-now/" component={DockNow} onEnter={requireAuth}/>
         <Route path="island-world/" component={IslandWorld} onEnter={requireAuth}/>
-        <Route path="island-residents/" component={Island_Resdentials_List} onEnter={requireAuth}/>
+        <Route path="island-residents/" component={Residents} onEnter={requireAuth}/>
         <Route path="parking-details/" component={ParkingDetails} onEnter={requireAuth}/>
         <Route path="showroom/" component={ShowRoom} onEnter={requireAuth}/>
-        <Route path="parked-mine/" component={ParkedMine} onEnter={requireAuth}/>
+        <Route path="parked-mine/" component={Dockings} onEnter={requireAuth}/>
     </Router>
 ), document.getElementById('root'))

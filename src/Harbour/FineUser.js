@@ -1,7 +1,7 @@
 import React from 'react'
 
 const base_url = 'http://direct-me.herokuapp.com/'
-let FineButton = React.createClass({
+const FineButton = React.createClass({
 
     fineUser(e){
         let port_id = e.target.id

@@ -1,11 +1,4 @@
-import * as React from 'react'
-import CSS from './CSS/superworld.css'
-
-const styles = {
-    width: '50px',
-    height: '50px'
-}
-
+import React from 'react'
 
 const Item = React.createClass({
     render() {

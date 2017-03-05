@@ -1,7 +1,7 @@
 import React from 'react'
 import {browserHistory} from 'react-router'
 
-let Island = React.createClass({
+const Island = React.createClass({
     handleClick(e) {
         sessionStorage.setItem('island_id', JSON.stringify(e.target.id))
         browserHistory.push('/island-residents/')

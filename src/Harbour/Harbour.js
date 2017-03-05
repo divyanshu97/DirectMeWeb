@@ -2,7 +2,7 @@ import React from 'react'
 import FineButton from './FineUser'
 
 const base_url = 'http://direct-me.herokuapp.com/'
-let ParkedOnMine = React.createClass({
+const Harbour = React.createClass({
 
     getInitialState(){
         return {
@@ -71,4 +71,4 @@ let ParkedOnMine = React.createClass({
         )
     }
 })
-export default ParkedOnMine
+export default Harbour

@@ -4,7 +4,7 @@ import {browserHistory} from 'react-router'
 
 const base_url = 'http://direct-me.herokuapp.com/'
 
-var ParkNow = React.createClass({
+const ParkNow = React.createClass({
 
     getInitialState: function () {
         return {

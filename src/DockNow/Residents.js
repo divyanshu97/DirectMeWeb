@@ -2,7 +2,7 @@ import React from 'react'
 import {browserHistory} from 'react-router'
 
 const base_url = 'http://direct-me.herokuapp.com/'
-let IslandResdentialsList = React.createClass({
+const Residents = React.createClass({
 
     getInitialState: function () {
         return {
@@ -62,4 +62,4 @@ let IslandResdentialsList = React.createClass({
     }
 })
 
-export default IslandResdentialsList
+export default Residents

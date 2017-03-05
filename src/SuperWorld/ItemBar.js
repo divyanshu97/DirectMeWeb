@@ -1,4 +1,5 @@
 import React from 'react'
+import Item from './Item'
 import Bamboo from './Images/bamboo.png'
 import Banana from './Images/banana.png'
 import Coconut from './Images/coconut.png'
@@ -6,8 +7,7 @@ import Gold from './Images/coin.png'
 import Timber from './Images/wood.png'
 import Setting from './Images/setting.png'
 import Leaderboard from './Images/leaderboardsign.png'
-import Item from './Item'
-import CSS from './CSS/superworld.css'
+
 
 const base_url = 'http://direct-me.herokuapp.com/'
 

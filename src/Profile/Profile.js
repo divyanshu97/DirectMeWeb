@@ -1,7 +1,7 @@
 import React from 'react'
 
 const base_url = 'http://direct-me.herokuapp.com/'
-let Profile = React.createClass({
+const Profile = React.createClass({
 
     getInitialState(){
         return {
@@ -25,8 +25,7 @@ let Profile = React.createClass({
                 'Authorization': 'Token ' + JSON.parse(localStorage.getItem('token'))
             }
         }).then(function (response) {
-            const data = response.json()
-            return data
+            return response.json()
         }).then(function (json) {
             self.fillForm(json)
         }).catch(function (ex) {

@@ -4,7 +4,7 @@ import DockButton from './DockShip.js'
 import {browserHistory} from 'react-router'
 
 const base_url = 'http://direct-me.herokuapp.com/'
-let ParkNow = React.createClass({
+const DockNow = React.createClass({
 
     getInitialState: function () {
         return {
@@ -75,4 +75,4 @@ let ParkNow = React.createClass({
         )
     }
 })
-export default ParkNow;
+export default DockNow;
