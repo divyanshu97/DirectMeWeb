@@ -35,11 +35,11 @@ ReactDOM.render((
         <Route path="superworld/" component={SuperWorld} onEnter={requireAuth}/>
         <Route path="profile/" component={Profile} onEnter={requireAuth}/>
         <Route path="parked-on-mine/" component={Harbour} onEnter={requireAuth}/>
-        <Route path="parked-now/" component={DockNow} onEnter={requireAuth}/>
+        <Route path="dock-now/" component={DockNow} onEnter={requireAuth}/>
         <Route path="island-world/" component={IslandWorld} onEnter={requireAuth}/>
         <Route path="island-residents/" component={Residents} onEnter={requireAuth}/>
         <Route path="parking-details/" component={ParkingDetails} onEnter={requireAuth}/>
         <Route path="showroom/" component={ShowRoom} onEnter={requireAuth}/>
-        <Route path="parked-mine/" component={Dockings} onEnter={requireAuth}/>
+        <Route path="dockings/" component={Dockings} onEnter={requireAuth}/>
     </Router>
 ), document.getElementById('root'))

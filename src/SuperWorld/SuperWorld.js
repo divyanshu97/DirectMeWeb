@@ -25,7 +25,10 @@ let SuperWorld = React.createClass({
 
                 {/* SUPER WORLD ELEMENTS */}
                 <div className="showroom">
-                    <img className="showroomimg" src={Showroom}/>
+                    <a href="/showroom/">
+                        <img className="showroomimg" src={Showroom}/>
+                    </a>
+
                 </div>
 
                 <div className="plank">
@@ -33,11 +36,11 @@ let SuperWorld = React.createClass({
                 </div>
 
                 <div className="parknow">
-                    <a href="#"><img src={Docknow} className="parknowimg"/></a>
+                    <a href="/dock-now/"><img src={Docknow} className="parknowimg"/></a>
                 </div>
 
                 <div className="parkedmine">
-                    <a href="#"><img src={MyDocking} className="parkedmineimg"/></a>
+                    <a href="/dockings/"><img src={MyDocking} className="parkedmineimg"/></a>
                 </div>
                 {/* SUPER WORLD ELEMENTS ENDS HERE */}
 
