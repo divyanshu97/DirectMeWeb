@@ -1,18 +1,17 @@
 import React from 'react'
-import Navigate from '../SuperWorld/Navigate.js'
 import {browserHistory} from 'react-router'
-
+import LeftArrow from './Images/arrowleft.png'
+import RightArrow from './Images/arrowright.png'
+import BuyButton from './Images/buybtn.png'
 const base_url = 'http://direct-me.herokuapp.com/'
 
-const ParkNow = React.createClass({
+const SelectShip = React.createClass({
 
     getInitialState: function () {
         return {
             boats: [],
             i: 0,
-            current_boat: {},
-            boats_image: [],
-            boats_buyCost: []
+            current_boat: {}
         }
     },
 
@@ -34,18 +33,7 @@ const ParkNow = React.createClass({
                     boats: boats,
                     current_boat: boats[this.state.i]
                 })
-                for (var i = 0; i < this.state.boats.length; i++) {
-                    var boats_image = this.state.boats_image.slice()
-                    boats_image.push(boats[i].image)
-                    this.setState({boats_image: boats_image})
-                    var boats_buyCost = this.state.boats_buyCost.slice()
-                    boats_buyCost.push(boats[i].buy_cost)
-                    this.setState({boats_buyCost: boats_buyCost})
-                }
-            }),
-            function (err) {
-
-            }
+            })
     },
 
 
@@ -76,18 +64,34 @@ const ParkNow = React.createClass({
     },
 
     render: function () {
-        let img = 'img_' + this.state.i
         return (
+
             <div>
-                <button id="Left_Button" onClick={this.handleLeftClick}>Left</button>
-                <button id="Right_Button" onClick={this.handleRightClick}>Right</button>
-                <Navigate id="DockButton" redirectUrl="" message="Buy"/>
-                <div ><img id="BoatImage" src={this.state.boats_image[this.state.i]}
-                           alt={this.state.boats[this.state.i]}/></div>
-                <div id="buyCost">Buy Cost :{this.state.boats_buyCost[this.state.i]}</div>
+                <li className="layer" data-depth="0.40">
+                    <div id="showdetails1">
+                        <div id="shipstuff">
+                            <h1 id="shipname">{this.state.current_boat.name}</h1>
+                            <p>Cost {this.state.current_boat.buy_cost}</p>
+                            <p>Experience Gain {this.state.current_boat.experience_gain}</p>
+                            <p>Multiplier {this.state.current_boat.cost_multiplier}</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li className="layer" data-depth="0.40">
+                    <div id="showdetails2">
+                        <div id="showcontent2">
+                            <h1>Details</h1>
+                        </div>
+                    </div>
+                </li>
+                <img src={LeftArrow} id="arrowleft" onClick={this.handleLeftClick}/>
+                <img src={RightArrow} id="arrowright" onClick={this.handleRightClick}/>
+                <img src={this.state.current_boat.image} id="ship" style={{height: 200, width: 200}}/>
+                <li className="layer" data-depth="0.50"><img src={BuyButton} id="buybtn"/></li>
             </div>
         )
     }
 })
 
-export default ParkNow;
+export default SelectShip;

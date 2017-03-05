@@ -9,7 +9,7 @@ import DockNow from './DockNow/DockNow'
 import IslandWorld from './Commons/IslandWorld.js'
 import Residents from './DockNow/Residents.js'
 import ParkingDetails from './Commons/ParkingDetails'
-import ShowRoom from './Showroom/ShowRoom.js'
+import ShowRoom from './Showroom/Showroom.js'
 import Dockings from './Dockings/Dockings.js'
 import {Router, Route, browserHistory} from 'react-router'
 
